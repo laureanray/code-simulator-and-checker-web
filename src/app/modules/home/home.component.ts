@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.sass']
 })
-export class AppComponent {
+export class HomeComponent {
   title = 'code-simulator-and-checker-web';
 }
