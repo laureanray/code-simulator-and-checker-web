@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RootComponent } from './root/root.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [RootComponent],
   imports: [
     CommonModule
   ]
