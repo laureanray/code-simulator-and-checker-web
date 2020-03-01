@@ -12,7 +12,7 @@ import {AccountModule} from './modules/account/account.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AccountModule
+    AccountModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
