@@ -8,11 +8,13 @@ import { SideNavigationComponent } from './components/side-navigation/side-navig
 import { CoursesComponent } from './components/courses/courses.component';
 import { AssignmentsComponent } from './components/assignments/assignments.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { PostComponent } from './components/dashboard/components/post/post.component';
+import { PostsComponent } from './components/dashboard/components/posts/posts.component';
 
 
 
 @NgModule({
-  declarations: [StudentComponent, DashboardComponent, StudentInfoCardComponent, SideNavigationComponent, CoursesComponent, AssignmentsComponent, MessagesComponent],
+  declarations: [StudentComponent, DashboardComponent, StudentInfoCardComponent, SideNavigationComponent, CoursesComponent, AssignmentsComponent, MessagesComponent, PostComponent, PostsComponent],
   imports: [
     CommonModule,
     StudentRoutingModule
