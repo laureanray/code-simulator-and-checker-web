@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from './admin/admin.component';
 import {RouterModule, Routes} from '@angular/router';
-import { UsersComponent } from './components/users/users.component';
+import { UsersComponent } from './users/users.component';
 import {AdminRoutingModule} from '@app/modules/admin/admin-routing.module';
 
 @NgModule({
