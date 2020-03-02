@@ -10,11 +10,13 @@ import { AssignmentsComponent } from './components/assignments/assignments.compo
 import { MessagesComponent } from './components/messages/messages.component';
 import { PostComponent } from './components/dashboard/components/post/post.component';
 import { PostsComponent } from './components/dashboard/components/posts/posts.component';
+import { SearchbarComponent } from './components/courses/components/searchbar/searchbar.component';
+import { EnrolledCoursesComponent } from './components/courses/components/enrolled-courses/enrolled-courses.component';
 
 
 
 @NgModule({
-  declarations: [StudentComponent, DashboardComponent, StudentInfoCardComponent, SideNavigationComponent, CoursesComponent, AssignmentsComponent, MessagesComponent, PostComponent, PostsComponent],
+  declarations: [StudentComponent, DashboardComponent, StudentInfoCardComponent, SideNavigationComponent, CoursesComponent, AssignmentsComponent, MessagesComponent, PostComponent, PostsComponent, SearchbarComponent, EnrolledCoursesComponent],
   imports: [
     CommonModule,
     StudentRoutingModule
