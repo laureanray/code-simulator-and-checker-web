@@ -1,5 +1,29 @@
 <div class="container">
-  <h1> Hello Admin </h1>
-
+  <div class="row mt-4">
+    <div class="col">
+      <h4> Welcome, name </h4>
+    </div>
+  </div>
+  <ul class="nav nav-tabs mt-2">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Overview</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
   <router-outlet></router-outlet>
 </div>

@@ -13,9 +13,10 @@ import {PostsComponent} from './dashboard/posts/posts.component';
 import {SearchbarComponent} from './courses/searchbar/searchbar.component';
 import {EnrolledCoursesComponent} from './courses/enrolled-courses/enrolled-courses.component';
 import {AppModule} from '@app/app.module';
-import {LoadingComponent} from '@app/shared/components/loading/loading.component';
+import {LoadingComponent} from '@app/shared/loading/loading.component';
 import {SharedModule} from '@app/shared/shared.module';
 import { MessagesListComponent } from './messages/messages-list/messages-list.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MessagesListComponent } from './messages/messages-list/messages-list.co
   imports: [
     CommonModule,
     StudentRoutingModule,
+    ReactiveFormsModule,
     SharedModule
   ]
 })
