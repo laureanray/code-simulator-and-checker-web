@@ -7,7 +7,8 @@ import {AccountModule} from './modules/account/account.module';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { HomeComponent } from './shared/home/home.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
+import {JwtInterceptor} from '@app/core/authentication/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     AccountModule,
     HttpClientModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ]
 })
 export class AppModule { }

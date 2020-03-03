@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '@environments/environment';
 import { Student } from '../models';
+import {StudentService} from '@app/core/services/student.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -12,7 +13,7 @@ export class AuthenticationService {
   public currentUser: Observable<Student>;
   private httpOptions: { headers: HttpHeaders };
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private studentService: StudentService) {
     this.currentUserSubject = new BehaviorSubject<Student>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -36,12 +37,18 @@ export class AuthenticationService {
 
 
     return this.http.post<any>(`${environment.apiUrl}/oauth/token`, body.toString(), this.httpOptions)
-      .pipe(map(user => {
+      .pipe(map(response => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         // localStorage.setItem('currentUser', JSON.stringify(user));
         // this.currentUserSubject.next(user);
-        console.log(user);
-        return user;
+        const student = new Student();
+        student.token = response.access_token;
+        // localStorage.setItem('currentUser', JSON.stringify(student));
+        this.currentUserSubject.next(student);
+        console.log(student);
+        const res = this.studentService.getStudent(username);
+        console.log(res);
+        return response;
       }));
   }
 
