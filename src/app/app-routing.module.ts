@@ -10,7 +10,12 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'admin', loadChildren: () => import('@app/modules/admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard]},
+  {
+    path: 'admin',
+    loadChildren: () => import('@app/modules/admin/admin.module').then(m => m.AdminModule),
+    canActivate: [AuthGuard],
+    data: { role: 'ROLE_ADMIN' }
+  },
   {
     path: 'instructor', loadChildren: () => import('@app/modules/instructor/instructor.module')
       .then(m => m.InstructorModule), canActivate: [AuthGuard]

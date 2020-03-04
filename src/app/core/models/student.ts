@@ -4,5 +4,4 @@ import {Role} from '@app/core/models/role';
 
 export class Student extends User {
   courses: Course[];
-  roles: Role[];
 }

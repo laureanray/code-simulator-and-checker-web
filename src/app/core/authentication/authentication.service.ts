@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import * as jwt_decode from "jwt-decode";
+import * as jwt_decode from 'jwt-decode';
 
 import { environment } from '@environments/environment';
 import { Student } from '../models';
@@ -31,10 +31,9 @@ export class AuthenticationService {
   }
 
   getDecodedAccessToken(token: string): any {
-    try{
+    try {
       return jwt_decode(token);
-    }
-    catch(Error){
+    } catch (Error) {
       return null;
     }
   }
@@ -67,16 +66,14 @@ export class AuthenticationService {
 
             // Set token so we can access the endpoints
             instructor.token = token;
-
+            instructor.roleName = tokenInfo.authorities[0];
             // Make this the current user
             this.currentUserSubject.next(instructor);
             this.instructorService.getInstructor(username)
               .subscribe((data: Instructor) => {
-                console.log(data);
                 instructor = Object.assign({}, data);
-                console.log(instructor);
+                localStorage.setItem('currentUser', JSON.stringify(instructor));
               });
-
             break;
           case 'ROLE_STUDENT':
             console.log('student');

@@ -1,3 +1,5 @@
+import {Role} from '@app/core/models/role';
+
 export class User {
   id: number;
   username: string;
@@ -9,4 +11,5 @@ export class User {
   updatedAt: string;
   profileImageURL: string;
   enabled: boolean;
+  roleName: string;
 }
