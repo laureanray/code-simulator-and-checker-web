@@ -1,22 +1,26 @@
-<div class="container">
+<div class="container" style="margin-bottom: 50px;">
  <div class="row">
-   <div class="col-4 mx-auto mt-5">
-     <h4 class="display-4">
-       Login
-     </h4>
-     <div class="card mt-3">
+   <div class="col-4 mx-auto">
+     <div class="card mt-4">
        <div class="card-body">
+         <h4 class="display-4 text-center">
+           Login
+         </h4>
+         <p class="text-muted text-center"> Login to your Codesim account.</p>
+         <div class="border-bottom border-bottom-1 mb-4"></div>
          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
            <div class="form-group">
-             <label for="username">Username</label>
-             <input type="email" class="form-control" formControlName="username">
+             <input type="email" class="form-control" placeholder="Username" formControlName="username">
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword1">Password</label>
-             <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+             <input type="password" formControlName="password" class="form-control" placeholder="Password">
            </div>
-           <button type="submit" class="btn btn-primary">Submit</button>
+           <button type="submit" class="btn btn-primary btn-block" >Login</button>
          </form>
+           <div class="mt-4 text-center">
+              <h6 class="text-muted">New to codesim? <a href="javascript:void(0)" routerLink="/register" class="text-dark"> Signup up now</a>.</h6>
+           </div>
+
        </div>
      </div>
    </div>

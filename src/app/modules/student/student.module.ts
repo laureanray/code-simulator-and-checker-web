@@ -17,7 +17,7 @@ import {LoadingComponent} from '@app/shared/loading/loading.component';
 import {SharedModule} from '@app/shared/shared.module';
 import { MessagesListComponent } from './messages/messages-list/messages-list.component';
 import {ReactiveFormsModule} from '@angular/forms';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,8 +38,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     StudentRoutingModule,
     ReactiveFormsModule,
-    SharedModule
-  ]
+    SharedModule,
+    NgbModule
+]
 })
 export class StudentModule {
 }

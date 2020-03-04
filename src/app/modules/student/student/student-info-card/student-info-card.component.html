@@ -1,6 +1,27 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h1> Test </h1>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+
 <div class="card">
   <div class="card-body">
-    <h6> Name Name </h6>
-    <p class="small">  Badge </p>
+
+    <h6 style="cursor: pointer" (click)="open(content)" >
+        {{student.firstName}} {{student.lastName}}
+    </h6>
+    <p class="small">  Student  </p>
   </div>
 </div>
+
+

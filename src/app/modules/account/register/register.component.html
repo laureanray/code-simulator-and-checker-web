@@ -1,23 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-5 mx-auto mt-5">
-      <h4 class="display-4">
-        Register
-      </h4>
-      <div class="card mt-3">
+    <div class="col-5 mx-auto">
+      <div class="card mt-4">
         <div class="card-body">
-          <form>
+          <h4 class="display-4 text-center">
+            Register
+          </h4>
+          <p class="text-muted text-center"> Create your Codesim account today.</p>
+          <div class="border-bottom border-bottom-1 mb-4"></div>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-7">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Juan">
+                  <input type="text" class="form-control" formControlName="firstName" placeholder="Juan">
                 </div>
               </div>
               <div class="col-5">
                 <div class="form-group">
                   <label>Last Name</label>
-                  <input type="text" class="form-control" placeholder="Dela Cruz">
+                  <input type="text" class="form-control" formControlName="lastName" placeholder="Dela Cruz">
                 </div>
               </div>
             </div>
@@ -55,7 +57,7 @@
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
             <small class="form-text text-muted">By clicking register you are agreeing to our <a
               href=""> terms</a>.</small>
           </form>

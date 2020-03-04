@@ -9,10 +9,16 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
+  isLoggedIn;
+
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router
   ) {
+    // this.isLoggedIn = authenticationService.isLoggedIn;
+    this.authenticationService.currentUser.subscribe(data => {
+      this.isLoggedIn = !!data;
+    });
   }
 
   ngOnInit(): void {
