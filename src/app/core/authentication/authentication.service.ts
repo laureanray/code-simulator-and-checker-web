@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as jwt_decode from 'jwt-decode';
-
+import * as _ from 'lodash';
 import { environment } from '@environments/environment';
 import { Student } from '../models';
 import {StudentService} from '@app/core/services/student.service';
@@ -75,7 +75,7 @@ export class AuthenticationService {
             this.currentUserSubject.next(instructor);
             this.instructorService.getInstructor(username)
               .subscribe((data: Instructor) => {
-                instructor = Object.assign({}, data);
+                instructor = _.merge(instructor, data);
                 localStorage.setItem('currentUser', JSON.stringify(instructor));
               });
             break;
@@ -88,46 +88,29 @@ export class AuthenticationService {
             this.currentUserSubject.next(student);
             this.studentService.getStudent(username)
               .subscribe((data: Student) => {
-                student = Object.assign({}, data);
+                student = _.merge(student, data);
                 localStorage.setItem('currentUser', JSON.stringify(student));
               });
             break;
           case 'ROLE_ADMIN':
             let admin = new Admin();
             // Set token so we can access the endpoints
+            console.log('admin');
             admin.token = token;
             admin.roleName = tokenInfo.authorities[0];
             // Make this the current user
             this.currentUserSubject.next(admin);
             this.adminService.getAdmin(username)
               .subscribe((data: Admin) => {
-                admin = Object.assign({}, data);
+                admin = _.merge(admin, data);
                 localStorage.setItem('currentUser', JSON.stringify(admin));
+                console.log(admin);
               });
             break;
           default: return;
         }
 
-        // store user details and jwt token in local storage to keep user logged in between page refreshes
-        // localStorage.setItem('currentUser', JSON.stringify(user));
-        // this.currentUserSubject.next(user);
-        // localStorage.setItem('currentUser', JSON.stringify(student));
-        // const student = new Student();
-        // student.token = response.access_token;
-        // this.currentUserSubject.next(student);
-        // this.studentService.getStudent(username)
-        //   .subscribe((data: Student) => {
-        //       student.id = data.id;
-        //       student.firstName = data.firstName;
-        //       student.lastName = data.lastName;
-        //       student.email = data.email;
-        //       student.username = data.username;
-        //       student.roles = data.roles;
-        //   });
-        // console.log(student);
-        console.log(response);
-        console.log(tokenInfo);
-        return response;
+        return tokenInfo.authorities[0];
       }));
   }
 
