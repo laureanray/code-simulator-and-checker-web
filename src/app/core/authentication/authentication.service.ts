@@ -16,6 +16,7 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   private httpOptions: { headers: HttpHeaders };
+  public isLoggedIn: boolean;
 
   constructor(
     private http: HttpClient,
@@ -24,6 +25,9 @@ export class AuthenticationService {
   ) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
+    this.currentUserSubject.subscribe(val => {
+      this.isLoggedIn = !!val;
+    });
   }
 
   public get currentUserValue(): User {
@@ -60,10 +64,7 @@ export class AuthenticationService {
 
         switch (tokenInfo.authorities[0]) {
           case 'ROLE_INSTRUCTOR':
-            console.log('instructor');
-
             let instructor = new Instructor();
-
             // Set token so we can access the endpoints
             instructor.token = token;
             instructor.roleName = tokenInfo.authorities[0];
@@ -76,7 +77,17 @@ export class AuthenticationService {
               });
             break;
           case 'ROLE_STUDENT':
-            console.log('student');
+            let student = new Student();
+            // Set token so we can access the endpoints
+            student.token = token;
+            student.roleName = tokenInfo.authorities[0];
+            // Make this the current user
+            this.currentUserSubject.next(student);
+            this.studentService.getStudent(username)
+              .subscribe((data: Student) => {
+                student = Object.assign({}, data);
+                localStorage.setItem('currentUser', JSON.stringify(student));
+              });
             break;
           case 'ROLE_ADMIN':
             console.log('admin');

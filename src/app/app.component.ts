@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from '@app/core/authentication/authentication.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
-
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService) {
+  }
 
   ngOnInit(): void {
-    console.log('Test');
   }
 }

@@ -17,12 +17,15 @@ const routes: Routes = [
     data: { role: 'ROLE_ADMIN' }
   },
   {
-    path: 'instructor', loadChildren: () => import('@app/modules/instructor/instructor.module')
-      .then(m => m.InstructorModule), canActivate: [AuthGuard]
+    path: 'instructor',
+    loadChildren: () => import('@app/modules/instructor/instructor.module').then(m => m.InstructorModule),
+    canActivate: [AuthGuard],
+    data: { role: 'ROLE_INSTRUCTOR'}
   },
   {
-    path: 'student', loadChildren: () => import('@app/modules/student/student.module')
-      .then(m => m.StudentModule), canActivate: [AuthGuard]
+    path: 'student', loadChildren: () => import('@app/modules/student/student.module').then(m => m.StudentModule),
+    canActivate: [AuthGuard],
+    data: { role: 'ROLE_STUDENT' }
   },
   {path: '**', component: NotFoundComponent}
 ];
