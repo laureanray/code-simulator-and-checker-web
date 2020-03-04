@@ -1,16 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '@environments/environment';
-import {map} from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root'})
-export class StudentService {
+export class InstructorService {
   private httpOptions: { headers: HttpHeaders };
   constructor(private http: HttpClient) {
   }
 
-  getStudent(username: string) {
+  getInstructor(username: string) {
     return this.http
-      .get(`${environment.apiUrl}/api/v1/students/find/${username}`);
+      .get(`${environment.apiUrl}/api/v1/instructor/find/${username}`);
   }
 }
