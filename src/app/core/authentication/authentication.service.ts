@@ -10,6 +10,8 @@ import {StudentService} from '@app/core/services/student.service';
 import {User} from '@app/core/models/user';
 import {Instructor} from '@app/core/models/instructor';
 import {InstructorService} from '@app/core/services/instructor.service';
+import {Admin} from '@app/core/models/admin';
+import {AdminService} from '@app/core/services/admin.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -21,7 +23,8 @@ export class AuthenticationService {
   constructor(
     private http: HttpClient,
     private studentService: StudentService,
-    private instructorService: InstructorService
+    private instructorService: InstructorService,
+    private adminService: AdminService
   ) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
@@ -90,7 +93,17 @@ export class AuthenticationService {
               });
             break;
           case 'ROLE_ADMIN':
-            console.log('admin');
+            let admin = new Admin();
+            // Set token so we can access the endpoints
+            admin.token = token;
+            admin.roleName = tokenInfo.authorities[0];
+            // Make this the current user
+            this.currentUserSubject.next(admin);
+            this.adminService.getAdmin(username)
+              .subscribe((data: Admin) => {
+                admin = Object.assign({}, data);
+                localStorage.setItem('currentUser', JSON.stringify(admin));
+              });
             break;
           default: return;
         }
