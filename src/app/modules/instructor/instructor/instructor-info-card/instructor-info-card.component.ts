@@ -12,9 +12,9 @@ export class InstructorInfoCardComponent implements OnInit {
   instructor: Instructor;
 
   constructor(
-    private authenticaitonService: AuthenticationService
+    private authenticationService: AuthenticationService
   ) {
-    this.authenticaitonService.currentUser.subscribe((instructor: Instructor) => {
+    this.authenticationService.currentUser.subscribe((instructor: Instructor) => {
       this.instructor = instructor;
     });
   }
