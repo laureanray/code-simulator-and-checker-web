@@ -4,10 +4,10 @@ import { AdminComponent } from './admin/admin.component';
 import {RouterModule, Routes} from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import {AdminRoutingModule} from '@app/modules/admin/admin-routing.module';
-import { OverviewComponent } from './overview/overview.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AdminComponent, UsersComponent, OverviewComponent],
+  declarations: [AdminComponent, UsersComponent, DashboardComponent],
   imports: [
     CommonModule,
     AdminRoutingModule

@@ -6,6 +6,7 @@ import {DashboardComponent} from '@app/modules/student/dashboard/dashboard.compo
 import {CoursesComponent} from '@app/modules/student/courses/courses.component';
 import {AssignmentsComponent} from '@app/modules/student/assignments/assignments.component';
 import {MessagesComponent} from '@app/modules/student/messages/messages.component';
+import {ProfileComponent} from '@app/modules/student/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard'},
@@ -14,7 +15,8 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent},
       { path: 'courses', component: CoursesComponent},
       { path: 'assignments', component: AssignmentsComponent},
-      { path: 'messages', component: MessagesComponent}
+      { path: 'messages', component: MessagesComponent},
+      { path: 'profile', component: ProfileComponent}
     ]
   },
 

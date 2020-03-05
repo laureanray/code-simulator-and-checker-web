@@ -12,8 +12,7 @@ export class StudentInfoCardComponent implements OnInit {
   student: Student;
 
   constructor(
-    private authenticationService: AuthenticationService,
-    private modalService: NgbModal
+    private authenticationService: AuthenticationService
   ) {
     this.authenticationService.currentUser.subscribe((student: Student) => {
         this.student = student;
@@ -23,19 +22,4 @@ export class StudentInfoCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-    }, (reason) => {
-    });
-  }
-
-  private static getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
 }

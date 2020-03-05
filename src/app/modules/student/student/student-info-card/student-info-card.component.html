@@ -1,27 +1,17 @@
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <h1> Test </h1>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-  </div>
-</ng-template>
 
 
-<div class="card">
-  <div class="card-body">
+<a routerLink="profile">
+  <div class="card">
+    <div class="card-body">
 
-    <h6 style="cursor: pointer" (click)="open(content)" >
+      <img src="/assets/user.png" style="width: 100px" class="img-fluid border border-1 p-2" alt="">
+      <h6 style="cursor: pointer" class="mt-2 mb-0" (click)="open(content)" >
         {{student.firstName}} {{student.lastName}}
-    </h6>
-    <p class="small">  Student  </p>
-  </div>
-</div>
+      </h6>
+      <p class="small p-0 m-0">  Student  </p>
 
+    </div>
+  </div>
+
+</a>
 
