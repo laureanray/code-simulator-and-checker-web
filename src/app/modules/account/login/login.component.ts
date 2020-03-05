@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   error = '';
   submitted = false;
+  errorMsg: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -72,8 +73,10 @@ export class LoginComponent implements OnInit {
           }
         },
         error => {
-          this.error = error;
-          console.log('err');
+          console.log(error);
+          if (error.status === 400) {
+            this.errorMsg = 'Invalid credentials';
+          }
         }
       );
   }
