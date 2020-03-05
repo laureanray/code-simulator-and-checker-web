@@ -15,7 +15,6 @@ import { MessagesListComponent } from './messages/messages-list/messages-list.co
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {StudentInfoCardComponent} from '@app/modules/student/student/student-info-card/student-info-card.component';
-import { SidenavComponent } from './student/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { SidenavComponent } from './student/sidenav/sidenav.component';
     EnrolledCoursesComponent,
     MessagesListComponent,
     StudentInfoCardComponent,
-    SidenavComponent
   ],
   imports: [
     CommonModule,
