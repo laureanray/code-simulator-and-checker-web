@@ -1,3 +1,4 @@
+import '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '@app/core/authentication/authentication.service';
 import {Observable} from 'rxjs';
