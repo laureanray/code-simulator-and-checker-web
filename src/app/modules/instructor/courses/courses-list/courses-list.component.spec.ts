@@ -7,7 +7,7 @@ describe('CoursesListComponent', () => {
   let fixture: ComponentFixture<CoursesListComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
+    TestBedcode.configureTestingModule({
       declarations: [ CoursesListComponent ]
     })
     .compileComponents();

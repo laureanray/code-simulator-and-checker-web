@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CourseNavService} from '@app/core/services/course.nav.service';
 
 @Component({
   selector: 'app-create',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private courseNavService: CourseNavService) {
+    this.courseNavService.updateRoute('Create');
+  }
 
   ngOnInit(): void {
-    console.log('create');
   }
 
 }
