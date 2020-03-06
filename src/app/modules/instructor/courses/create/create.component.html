@@ -11,16 +11,25 @@
         <form action="">
           <h6> Course Information</h6>
           <div class="row">
-            <div class="col-7">
+            <div class="col-6">
               <div class="form-group">
                 <label>Course Title</label>
-                <input type="text" class="form-control" formControlName="firstName" placeholder="Juan">
+                <input type="text" class="form-control" formControlName="firstName" placeholder="Basic Programming in Java">
               </div>
             </div>
-            <div class="col-5">
+            <div class="col-3">
               <div class="form-group">
-                <label>Language</label>
-                <input type="text" class="form-control" formControlName="lastName" placeholder="Dela Cruz">
+                <label>Programming Language</label>
+                <select class="form-control" name="" >
+                  <option value="null" selected> Select... </option>
+                  <option value="Java">Java</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <label for="">Course Code </label>
+                <input type="text" placeholder="COENXXXX" class="form-control">
               </div>
             </div>
           </div>
@@ -34,7 +43,17 @@
 
           <div class="row">
             <div class="col">
-              <label for=""></label>
+              <button  class="btn btn-outline-primary" (click)="addModule(); $event.preventDefault()">
+                <fa-icon [icon]="faPlus"></fa-icon>
+                Add Module {{ moduleNumber }} </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+                <button class="btn btn-success">
+                  <fa-icon [icon]="faSave"></fa-icon>
+                  Create Course
+                </button>
             </div>
           </div>
         </form>
