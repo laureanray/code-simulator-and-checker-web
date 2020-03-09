@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from '@app/core/authentication/authentication.service';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {Student} from '@app/core/models';
+import {AuthenticationService} from '../../../../core/authentication/authentication.service';
+import {Student} from '../../../../core/models';
 
 @Component({
   selector: 'app-student-info-card',

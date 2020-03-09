@@ -4,14 +4,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as jwt_decode from 'jwt-decode';
 import * as _ from 'lodash';
-import { environment } from '@environments/environment';
 import { Student } from '../models';
-import {StudentService} from '@app/core/services/student.service';
-import {User} from '@app/core/models/user';
-import {Instructor} from '@app/core/models/instructor';
-import {InstructorService} from '@app/core/services/instructor.service';
-import {Admin} from '@app/core/models/admin';
-import {AdminService} from '@app/core/services/admin.service';
+import {User} from '../models/user';
+import {StudentService} from '../services/student.service';
+import {InstructorService} from '../services/instructor.service';
+import {AdminService} from '../services/admin.service';
+import {environment} from '../../../environments/environment';
+import {Instructor} from '../models/instructor';
+import {Admin} from '../models/admin';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {

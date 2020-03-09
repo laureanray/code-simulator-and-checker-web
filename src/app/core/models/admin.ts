@@ -1,3 +1,4 @@
-import {User} from '@app/core/models/user';
+import {User} from './user';
+
 export class Admin extends User {
 }

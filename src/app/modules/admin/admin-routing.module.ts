@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import {UsersComponent} from '@app/modules/admin/users/users.component';
-import {DashboardComponent} from '@app/modules/admin/dashboard/dashboard.component';
-import {CoursesComponent} from '@app/modules/admin/courses/courses.component';
-import {MaintenanceComponent} from '@app/modules/admin/maintenance/maintenance.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {UsersComponent} from './users/users.component';
+import {CoursesComponent} from './courses/courses.component';
+import {MaintenanceComponent} from './maintenance/maintenance.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },

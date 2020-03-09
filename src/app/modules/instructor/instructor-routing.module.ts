@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {InstructorComponent} from '@app/modules/instructor/instructor/instructor.component';
-import {CoursesComponent} from '@app/modules/instructor/courses/courses.component';
-import {DashboardComponent} from '@app/modules/instructor/dashboard/dashboard.component';
-import {AssignmentsComponent} from '@app/modules/instructor/assignments/assignments.component';
-import {MessagesComponent} from '@app/modules/instructor/messages/messages.component';
-import {CreateComponent} from '@app/modules/instructor/courses/create/create.component';
-import {CoursesListComponent} from '@app/modules/instructor/courses/courses-list/courses-list.component';
+import {InstructorComponent} from './instructor/instructor.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {CoursesComponent} from './courses/courses.component';
+import {CoursesListComponent} from './courses/courses-list/courses-list.component';
+import {CreateComponent} from './courses/create/create.component';
+import {AssignmentsComponent} from './assignments/assignments.component';
+import {MessagesComponent} from './messages/messages.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },

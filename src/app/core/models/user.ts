@@ -1,5 +1,3 @@
-import {Role} from '@app/core/models/role';
-
 export class User {
   id: number;
   username: string;

@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import {Instructor} from '@app/core/models/instructor';
-import {AuthenticationService} from '@app/core/authentication/authentication.service';
+import {AuthenticationService} from '../../../../core/authentication/authentication.service';
+import {Instructor} from '../../../../core/models/instructor';
 
 @Component({
   selector: 'app-instructor-info-card',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import {CourseNavService} from '@app/core/services/course.nav.service';
+import {CourseNavService} from '../../../../core/services/course.nav.service';
 
 @Component({
   selector: 'app-courses-list',

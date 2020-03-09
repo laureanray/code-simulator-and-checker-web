@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {NotFoundComponent} from '@app/shared/not-found/not-found.component';
-import {LoadingComponent} from '@app/shared/loading/loading.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-import {SidenavComponent} from '@app/shared/sidenav/sidenav.component';
 import {RouterModule} from '@angular/router';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {LoadingComponent} from './loading/loading.component';
+import {SidenavComponent} from './sidenav/sidenav.component';
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CourseNavService} from '@app/core/services/course.nav.service';
 import {faPlus, faSave } from '@fortawesome/free-solid-svg-icons';
+import {CourseNavService} from '../../../../core/services/course.nav.service';
 
 @Component({
   selector: 'app-create',

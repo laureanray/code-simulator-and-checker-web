@@ -2,9 +2,9 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {LoginComponent} from './modules/account/login/login.component';
 import {RegisterComponent} from './modules/account/register/register.component';
-import {NotFoundComponent} from '@app/shared/not-found/not-found.component';
-import {HomeComponent} from '@app/shared/home/home.component';
-import {AuthGuard} from '@app/core/authentication/auth.guard';
+import {HomeComponent} from './shared/home/home.component';
+import {AuthGuard} from './core/authentication/auth.guard';
+import {NotFoundComponent} from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -12,18 +12,18 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent, data: {animation: 'RegisterPage'}},
   {
     path: 'admin',
-    loadChildren: () => import('@app/modules/admin/admin.module').then(m => m.AdminModule),
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),
     canActivate: [AuthGuard],
     data: { role: 'ROLE_ADMIN' }
   },
   {
     path: 'instructor',
-    loadChildren: () => import('@app/modules/instructor/instructor.module').then(m => m.InstructorModule),
+    loadChildren: () => import('./modules/instructor/instructor.module').then(m => m.InstructorModule),
     canActivate: [AuthGuard],
     data: { role: 'ROLE_INSTRUCTOR'}
   },
   {
-    path: 'student', loadChildren: () => import('@app/modules/student/student.module').then(m => m.StudentModule),
+    path: 'student', loadChildren: () => import('./modules/student/student.module').then(m => m.StudentModule),
     canActivate: [AuthGuard],
     data: { role: 'ROLE_STUDENT' }
   },

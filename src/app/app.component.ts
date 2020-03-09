@@ -1,18 +1,14 @@
 import '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from '@app/core/authentication/authentication.service';
 import {Observable} from 'rxjs';
 import {Router, RouterOutlet} from '@angular/router';
-import {User} from '@app/core/models/user';
-import {animation} from '@app/ux/animations/animations';
+import {User} from './core/models/user';
+import {AuthenticationService} from './core/authentication/authentication.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
-  animations: [
-    animation
-  ]
+  styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
   isLoggedIn;
