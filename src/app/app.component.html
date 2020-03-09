@@ -39,7 +39,8 @@
   </div>
 </nav>
 
-<router-outlet></router-outlet>
+<div [@routeAnimations]="prepareRoute(outlet)"></div>
+<router-outlet #outlet="outlet"></router-outlet>
 
 
 <nav class="navbar fixed-bottom border-top border-top-1 navbar-light bg-light-pure" >

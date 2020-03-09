@@ -8,8 +8,8 @@ import {AuthGuard} from '@app/core/authentication/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent, data: {animation: 'LoginPage'}},
+  {path: 'register', component: RegisterComponent, data: {animation: 'RegisterPage'}},
   {
     path: 'admin',
     loadChildren: () => import('@app/modules/admin/admin.module').then(m => m.AdminModule),
