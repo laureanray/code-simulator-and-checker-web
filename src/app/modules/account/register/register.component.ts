@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthenticationService} from '@app/core/authentication/authentication.service';
+import {StudentService} from '@app/core/services/student.service';
+import {Student} from '@app/core/models';
 
 @Component({
   selector: 'app-register',
@@ -9,8 +12,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-
+  constructor(
+    private formBuilder: FormBuilder,
+    private studentService: StudentService) {
   }
 
   ngOnInit(): void {
@@ -24,8 +28,25 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  onSubmit() {
 
+  get f() {
+    return this.registerForm.controls;
+  }
+
+  onSubmit() {
+    const student = new Student();
+
+    student.firstName = this.f.firstName.value;
+    student.lastName = this.f.lastName.value;
+    student.email = this.f.email.value;
+    student.username = this.f.username.value;
+    student.password = this.f.password.value;
+
+    this.studentService
+      .registerStudent(student)
+      .subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

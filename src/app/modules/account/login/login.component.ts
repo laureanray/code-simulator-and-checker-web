@@ -76,6 +76,8 @@ export class LoginComponent implements OnInit {
           console.log(error);
           if (error.status === 400) {
             this.errorMsg = 'Invalid credentials';
+          } else {
+            this.errorMsg = 'Can\'t connect. Please try again.';
           }
         }
       );

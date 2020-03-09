@@ -12,4 +12,5 @@ export class User {
   profileImageURL: string;
   enabled: boolean;
   roleName: string;
+  password: string;
 }

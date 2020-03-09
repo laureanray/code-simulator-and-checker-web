@@ -16,6 +16,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {StudentInfoCardComponent} from '@app/modules/student/student/student-info-card/student-info-card.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RegistrationSuccessComponent } from './registration-success/registration-success.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProfileComponent } from './profile/profile.component';
     MessagesListComponent,
     StudentInfoCardComponent,
     ProfileComponent,
+    RegistrationSuccessComponent,
   ],
   imports: [
     CommonModule,
