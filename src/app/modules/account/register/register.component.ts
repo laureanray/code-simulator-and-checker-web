@@ -11,6 +11,8 @@ import {Student} from '../../../core/models';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  errorMsg: string;
+  hide = false;
 
   constructor(
     private formBuilder: FormBuilder,

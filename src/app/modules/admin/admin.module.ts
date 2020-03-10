@@ -7,12 +7,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CoursesComponent } from './courses/courses.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import {AdminRoutingModule} from './admin-routing.module';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [AdminComponent, UsersComponent, DashboardComponent, CoursesComponent, CoursesComponent, MaintenanceComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatTableModule,
+    MatButtonModule
   ],
   bootstrap: [AdminComponent]
 })

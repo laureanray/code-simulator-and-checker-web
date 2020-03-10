@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   error = '';
   submitted = false;
   errorMsg: string;
+  hide = true;
 
   constructor(
     private formBuilder: FormBuilder,

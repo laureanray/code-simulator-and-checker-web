@@ -1,33 +1,49 @@
 <div class="container" style="margin-bottom: 50px;">
  <div class="row">
    <div class="col-4 mx-auto">
-     <div class="card mt-4">
-       <div class="card-body">
-         <h4 class="display-4 text-center">
-           Login
-         </h4>
-         <p class="text-muted text-center"> Login to your Codesim account.</p>
+     <mat-card class="mt-4">
+
+<!--       <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+       <mat-card-content>
+         <mat-card-title class="text-center mt-4">Login </mat-card-title>
+         <mat-card-subtitle class="text-center mt-2"> Login to your Codesim account.</mat-card-subtitle>
+<!--         <h4 class="display-4 text-center">-->
+<!--           Login-->
+<!--         </h4>-->
+<!--         <p class="text-muted text-center"> Login to your Codesim account.</p>-->
          <div class="border-bottom border-bottom-1 mb-4"></div>
-           <div class="alert alert-danger" *ngIf="errorMsg" role="alert">
-              {{errorMsg}}
-           </div>
-         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-           <div class="form-group">
-             <input type="email" class="form-control" placeholder="Username" formControlName="username" autofocus="autofocus">
-           </div>
-           <div class="form-group">
-             <input type="password" formControlName="password" class="form-control" placeholder="Password">
-           </div>
-           <button type="submit" class="btn btn-primary btn-block" >Login</button>
-         </form>
-           <div class="mt-4 text-center">
-              <h6 class="text-muted">New to codesim? <a href="javascript:void(0)" routerLink="/register" class="text-dark"> Signup up now</a>.</h6>
-           </div>
-         <div class="mt-4 text-center">
-           <h6><a href="javascript:void(0)" routerLink="/forgost-password" class="text-dark"> Forgot password</a> </h6>
+         <div class="alert alert-danger" *ngIf="errorMsg" role="alert">
+           {{errorMsg}}
          </div>
-       </div>
-     </div>
+         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+           <mat-form-field appearance="outline" class="w-100">
+             <mat-label>Username</mat-label>
+             <input matInput type="email" class="w-100" placeholder="Username" formControlName="username" autofocus="autofocus">
+           </mat-form-field>
+
+           <mat-form-field appearance="outline" class="w-100">
+             <mat-label>Enter your password</mat-label>
+             <input type="password" formControlName="password" placeholder="Password" matInput [type]="hide ? 'password' : 'text'">
+<!--             <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" (click)="$event.preventDefault()" [attr.aria-pressed]="hide">-->
+<!--               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+<!--             </button>-->
+           </mat-form-field>
+
+
+           <!--           <div class="form-group">-->
+           <!--             <input type="password" formControlName="password" class="form-control" placeholder="Password">-->
+           <!--           </div>-->
+           <button mat-raised-button color="primary" class="btn-block">Login</button>
+         </form>
+         <div class="mt-4 text-center">
+           <h4 class="text-muted">New to codesim? <a href="javascript:void(0)" routerLink="/register" class="text-dark"> Signup up now</a>.</h4>
+         </div>
+         <div class="mt-4 text-center">
+           <h4><a href="javascript:void(0)" routerLink="/forgost-password" class="text-dark"> Forgot password</a> </h4>
+         </div>
+       </mat-card-content>
+     </mat-card>
+
    </div>
  </div>
 </div>

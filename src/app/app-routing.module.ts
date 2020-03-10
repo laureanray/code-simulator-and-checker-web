@@ -8,8 +8,8 @@ import {NotFoundComponent} from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'login', component: LoginComponent, data: {animation: 'LoginPage'}},
-  {path: 'register', component: RegisterComponent, data: {animation: 'RegisterPage'}},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {
     path: 'admin',
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),
