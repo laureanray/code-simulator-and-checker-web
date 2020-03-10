@@ -17,6 +17,7 @@ import { RegistrationSuccessComponent } from './registration-success/registratio
 import {StudentInfoCardComponent} from './student/student-info-card/student-info-card.component';
 import {StudentRoutingModule} from './student-routing.module';
 import {SharedModule} from '../../shared/shared.module';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -34,13 +35,14 @@ import {SharedModule} from '../../shared/shared.module';
     ProfileComponent,
     RegistrationSuccessComponent,
   ],
-  imports: [
-    CommonModule,
-    StudentRoutingModule,
-    ReactiveFormsModule,
-    SharedModule,
-    NgbModule
-]
+    imports: [
+        CommonModule,
+        StudentRoutingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        NgbModule,
+        MatCardModule
+    ]
 })
 export class StudentModule {
 }
