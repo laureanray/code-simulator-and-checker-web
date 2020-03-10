@@ -5,6 +5,8 @@ import {RouterModule} from '@angular/router';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {LoadingComponent} from './loading/loading.component';
 import {SidenavComponent} from './sidenav/sidenav.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -12,7 +14,9 @@ import {SidenavComponent} from './sidenav/sidenav.component';
   declarations: [NotFoundComponent, LoadingComponent, ForbiddenComponent, SidenavComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports: [NotFoundComponent, LoadingComponent, SidenavComponent]
 })
