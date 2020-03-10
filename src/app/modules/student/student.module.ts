@@ -18,6 +18,7 @@ import {StudentInfoCardComponent} from './student/student-info-card/student-info
 import {StudentRoutingModule} from './student-routing.module';
 import {SharedModule} from '../../shared/shared.module';
 import {MatCardModule} from '@angular/material/card';
+import { PlaygroundComponent } from './playground/playground.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {MatCardModule} from '@angular/material/card';
     StudentInfoCardComponent,
     ProfileComponent,
     RegistrationSuccessComponent,
+    PlaygroundComponent,
   ],
     imports: [
         CommonModule,

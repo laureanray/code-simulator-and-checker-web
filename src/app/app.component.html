@@ -16,6 +16,12 @@
         </li>
       </ul>
 
+      <ul class="navbar-nav ml-auto">
+        <button mat-icon-button aria-label="Example icon-button with a heart icon">
+          <fa-icon [icon]="faBell"></fa-icon>
+        </button>
+      </ul>
+
       <ul class="navbar-nav" *ngIf="!isLoggedIn; else elseBlock">
         <li class="nav-item">
           <a routerLink="/login" class="nav-link">Log In</a>
@@ -30,6 +36,7 @@
           {{ user.firstName }}
         </button>
         <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/student">Dashboard </button>
           <button mat-menu-item (click)="accountSettings()">Account Settings </button>
           <button mat-menu-item (click)="logoutModal()">Logout</button>
         </mat-menu>

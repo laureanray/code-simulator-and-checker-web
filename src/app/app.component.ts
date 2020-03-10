@@ -6,6 +6,7 @@ import {User} from './core/models/user';
 import {AuthenticationService} from './core/authentication/authentication.service';
 import {MatDialog} from '@angular/material/dialog';
 import {LogoutModalComponent} from './shared/logout-modal/logout-modal.component';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import {LogoutModalComponent} from './shared/logout-modal/logout-modal.component
 export class AppComponent implements OnInit {
   isLoggedIn;
   user: User;
+  faBell = faBell;
 
   constructor(
     private authenticationService: AuthenticationService,

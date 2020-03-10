@@ -11,6 +11,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    FontAwesomeModule
   ],
   bootstrap: [AppComponent],
   providers: [
