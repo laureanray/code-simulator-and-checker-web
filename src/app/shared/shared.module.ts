@@ -9,18 +9,20 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { LogoutModalComponent } from './logout-modal/logout-modal.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 
 
 @NgModule({
   declarations: [NotFoundComponent, LoadingComponent, ForbiddenComponent, SidenavComponent, LogoutModalComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatCardModule,
-    MatButtonModule,
-    MatFormFieldModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatCardModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        FontAwesomeModule
+    ],
   exports: [NotFoundComponent, LoadingComponent, SidenavComponent]
 })
 export class SharedModule { }

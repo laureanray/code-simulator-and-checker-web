@@ -7,6 +7,7 @@ import {CoursesComponent} from './courses/courses.component';
 import {AssignmentsComponent} from './assignments/assignments.component';
 import {MessagesComponent} from './messages/messages.component';
 import {ProfileComponent} from './profile/profile.component';
+import {PlaygroundComponent} from './playground/playground.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'courses', component: CoursesComponent},
       { path: 'assignments', component: AssignmentsComponent},
       { path: 'messages', component: MessagesComponent},
-      { path: 'profile', component: ProfileComponent}
+      { path: 'profile', component: ProfileComponent},
+      { path: 'playground', component: PlaygroundComponent}
     ]
   },
 

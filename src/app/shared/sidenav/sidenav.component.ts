@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.sass']
 })
 export class SidenavComponent implements OnInit {
-
+  faLaptopCode = faLaptopCode;
   constructor() { }
 
   ngOnInit(): void {
